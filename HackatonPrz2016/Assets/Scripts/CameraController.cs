@@ -34,10 +34,10 @@ public class CameraController : MonoBehaviour {
 			}
 		}
 
-		print ("Left:" + mostLeftPlayer.name);
-		print ("Right:" + mostRightPlayer.name);
+		//print ("Left:" + mostLeftPlayer.name);
+		//print ("Right:" + mostRightPlayer.name);
 			
-		float newX = (mostRightPlayer.position.x + mostLeftPlayer.position.x) / 2.0f;
-		transform.position = new Vector3 (newX, transform.position.y, transform.position.z);
+		Vector3 pos = (mostLeftPlayer.position + mostRightPlayer.position) / 2;
+		transform.position = new Vector3 (pos.x, transform.position.y, transform.position.z);
 	}
 }
