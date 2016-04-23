@@ -3,8 +3,9 @@ using System.Collections;
 
 public static class GameSettings  {
 
-	public static PlayerPreferences Player1;
-	public static PlayerPreferences Player2;
+	public static PlayerPreferences Player1 = new PlayerPreferences();
+	public static PlayerPreferences Player2 = new PlayerPreferences();
+
 
 
 	public struct PlayerPreferences
@@ -17,8 +18,8 @@ public static class GameSettings  {
 
 	public struct KeyBindings
 	{
-		public string up, down;
-		public string left, right;
-		public string fastAttack, strongAttack, dash;
+		public  string up, down;
+		public  string left, right;
+		public  string fastAttack, strongAttack, dash;
 	}
 }
