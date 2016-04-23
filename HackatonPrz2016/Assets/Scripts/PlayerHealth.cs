@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerHealth : MonoBehaviour {
 
-	public float startingHealth = 100;
+public class PlayerHealth : MonoBehaviour {
+    public GameObject HealthBar;
+    public float startingHealth = 100;
 
 	PlayerMovement mov;
 	float health;
@@ -16,7 +17,9 @@ public class PlayerHealth : MonoBehaviour {
 
 	void Update()
 	{
-		try {
+
+        HealthBar.GetComponent<UnityEngine.UI.Slider>().value=health;
+        try {
 		} catch {
 		}
 	}
