@@ -8,7 +8,9 @@ public class AttackController : MonoBehaviour {
 	public float timeToStaminaRefill = 4;
 	public float startingMana = 100;
 	public float manaPerSecound = 9;
-	[Header("Attacks:")]
+    [Header("Attacks:")]
+    public GameObject ManaBar;
+    [Header("Attacks:")]
 	public LayerMask attackMask;
 	public AttackInfo fastAttack;
 	public AttackInfo strongAttack;
@@ -61,6 +63,7 @@ public class AttackController : MonoBehaviour {
 
 	void Update()
 	{
+        ManaBar.GetComponent<UnityEngine.UI.Slider>().value = manaCounter;
 		if (!dooingAttack && !movement.exhausted) {
 			print (strFAttack);
 			
