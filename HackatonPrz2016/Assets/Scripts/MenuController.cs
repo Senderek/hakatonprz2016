@@ -52,7 +52,7 @@ public class MenuController : Singleton<MenuController>
 
     void Start()
     {
-        //Input.
+        
         OnMenuChangeState();
     }
 
@@ -78,16 +78,23 @@ public class MenuController : Singleton<MenuController>
     }
     public void OnPlayModeButtonPressed()
     {
+
         this.currentState = EMenuState.PLAYMENU;
         OnMenuChangeState();
     }
     public void OnControls1ButtonPressed()
     {
+        if (this.currentState == EMenuState.CONTROLSMENU1)
+            this.currentState = EMenuState.PLAYMENU;
+        else 
         this.currentState = EMenuState.CONTROLSMENU1;
         OnMenuChangeState();
     }
     public void OnControls2ButtonPressed()
     {
+        if (this.currentState == EMenuState.CONTROLSMENU2)
+        this.currentState = EMenuState.PLAYMENU;
+        else
         this.currentState = EMenuState.CONTROLSMENU2;
         OnMenuChangeState();
     }
