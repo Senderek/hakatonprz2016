@@ -350,6 +350,10 @@ Prefab:
       propertyPath: ManaBar
       value: 
       objectReference: {fileID: 45302676}
+    - target: {fileID: 11467554, guid: d5cbc00b09800224396997c6456acb02, type: 2}
+      propertyPath: fireball.manaCost
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11468908, guid: d5cbc00b09800224396997c6456acb02, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: d5cbc00b09800224396997c6456acb02, type: 2}
