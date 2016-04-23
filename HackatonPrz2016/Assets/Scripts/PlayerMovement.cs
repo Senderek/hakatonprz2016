@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour {
 	public Vector2 faceDirection;
 	[HideInInspector]
 	public bool exhausted;
-	public float exhaustTime = 3;
+	public float exhaustTime = 1.5f;
 	float exhaustCounter;
 
 	float timer = 0;
