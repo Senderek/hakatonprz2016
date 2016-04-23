@@ -5,8 +5,8 @@ public class FireBall : MonoBehaviour {
 
 	public LayerMask mask;
 	public float destroyTime = 3;
-	public float speed = 10;
-	public float damage = 15;
+	public float speed = 8;
+	public float damage = 25;
 	public float skinWidth = 0.15f;
 
 	Rigidbody2D rigidbody;

@@ -63,9 +63,10 @@ public class AttackController : MonoBehaviour {
 
 	void Update()
 	{
-        ManaBar.GetComponent<UnityEngine.UI.Slider>().value = manaCounter;
+        //Debug.Log(mana);
+        ManaBar.GetComponent<UnityEngine.UI.Slider>().value = mana/100;
 		if (!dooingAttack && !movement.exhausted) {
-			print (strFAttack);
+			//print (strFAttack);
 			
 			if (Input.GetKeyDown (strFAttack)) {
 				inputData.fastAttack = true;
@@ -100,11 +101,13 @@ public class AttackController : MonoBehaviour {
 					StartCoroutine(SpecialAttackCounter(fireball.cooldown));
 					GameObject fb = (GameObject)Instantiate (fireball.gameObject, spawnPoint.position, transform.rotation);
 					fb.GetComponent<FireBall> ().SetVelocity (movement.faceDirection);
-					startingMana -= fireball.manaCost;
-				}
+					//startingMana -= fireball.manaCost;
+                    mana -= fireball.manaCost;
+                }
 			}
 		}
-
+        if (mana<100)
+        
 		mana += manaPerSecound * Time.deltaTime;
 		staminaCounter += Time.deltaTime;
 		if (staminaCounter >= timeToStaminaRefill) {

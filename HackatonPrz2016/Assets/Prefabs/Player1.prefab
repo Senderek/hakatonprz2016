@@ -170,6 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 718164060230b5448a808159241fcd2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HealthBar: {fileID: 0}
   startingHealth: 100
 --- !u!114 &11453522
 MonoBehaviour:
@@ -206,6 +207,7 @@ MonoBehaviour:
   timeToStaminaRefill: 4
   startingMana: 100
   manaPerSecound: 9
+  ManaBar: {fileID: 0}
   attackMask:
     serializedVersion: 2
     m_Bits: 256
@@ -226,7 +228,7 @@ MonoBehaviour:
     name: Fireball
     gameObject: {fileID: 120844, guid: b3cee3fa36684e946acb7454cbb7f711, type: 2}
     cooldown: 2
-    manaCost: 0
+    manaCost: 50
     used: 0
   dooingAttack: 0
 --- !u!114 &11468908
@@ -240,6 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 718164060230b5448a808159241fcd2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HealthBar: {fileID: 0}
   startingHealth: 100
 --- !u!212 &21240998
 SpriteRenderer:
