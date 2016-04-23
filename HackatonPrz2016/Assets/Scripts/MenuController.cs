@@ -94,24 +94,24 @@ public class MenuController : Singleton<MenuController>
     {
 
 
-        GameSettings.Player1.keyBindings.up = moveuptext.ToString();
-        GameSettings.Player1.keyBindings.down = movedowntext.ToString();
-        GameSettings.Player1.keyBindings.right = moverighttext.ToString();
-        GameSettings.Player1.keyBindings.left=movelefttext.ToString();
-        GameSettings.Player1.keyBindings.fastAttack=fastattacktext.ToString();
-        GameSettings.Player1.keyBindings.strongAttack = slowattacktext.ToString();
-        GameSettings.Player1.keyBindings.dash = dashtext.ToString();
-        GameSettings.Player1.name = name1.ToString();
+        GameSettings.Player1.keyBindings.up = moveuptext.GetComponent<UnityEngine.UI.Text>().text.ToString();
+        GameSettings.Player1.keyBindings.down = movedowntext.GetComponent<UnityEngine.UI.Text>().text.ToString();
+        GameSettings.Player1.keyBindings.right = moverighttext.GetComponent<UnityEngine.UI.Text>().text.ToString();
+        GameSettings.Player1.keyBindings.left=movelefttext.GetComponent<UnityEngine.UI.Text>().text.ToString();
+        GameSettings.Player1.keyBindings.fastAttack=fastattacktext.GetComponent<UnityEngine.UI.Text>().text.ToString();
+        GameSettings.Player1.keyBindings.strongAttack = slowattacktext.GetComponent<UnityEngine.UI.Text>().text.ToString();
+        GameSettings.Player1.keyBindings.dash = dashtext.GetComponent<UnityEngine.UI.Text>().text.ToString();
+        GameSettings.Player1.name = name1.GetComponent<UnityEngine.UI.Text>().text.ToString();
         GameSettings.Player1.color = color1;
 
-        GameSettings.Player2.keyBindings.up = moveuptext2.ToString();
-        GameSettings.Player2.keyBindings.down = movedowntext2.ToString();
-        GameSettings.Player2.keyBindings.right = moverighttext2.ToString();
-        GameSettings.Player2.keyBindings.left = movelefttext2.ToString();
-        GameSettings.Player2.keyBindings.fastAttack = fastattacktext2.ToString();
-        GameSettings.Player2.keyBindings.strongAttack = slowattacktext2.ToString();
-        GameSettings.Player2.keyBindings.dash = dashtext2.ToString();
-        GameSettings.Player2.name = name2.ToString();
+        GameSettings.Player2.keyBindings.up = moveuptext2.GetComponent<UnityEngine.UI.Text>().text.ToString();
+        GameSettings.Player2.keyBindings.down = movedowntext2.GetComponent<UnityEngine.UI.Text>().text.ToString();
+        GameSettings.Player2.keyBindings.right = moverighttext2.GetComponent<UnityEngine.UI.Text>().text.ToString();
+        GameSettings.Player2.keyBindings.left = movelefttext2.GetComponent<UnityEngine.UI.Text>().text.ToString();
+        GameSettings.Player2.keyBindings.fastAttack = fastattacktext2.GetComponent<UnityEngine.UI.Text>().text.ToString();
+        GameSettings.Player2.keyBindings.strongAttack = slowattacktext2.GetComponent<UnityEngine.UI.Text>().text.ToString();
+        GameSettings.Player2.keyBindings.dash = dashtext2.GetComponent<UnityEngine.UI.Text>().text.ToString();
+        GameSettings.Player2.name = name2.GetComponent<UnityEngine.UI.Text>().text.ToString();
         GameSettings.Player2.color = color2;
 
 
