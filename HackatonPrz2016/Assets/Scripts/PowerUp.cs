@@ -7,12 +7,21 @@ public class PowerUp : MonoBehaviour {
 	public enum PowerUpType {HEALTH, MANA, STAMINA};
 	public PowerUpType type;
 
-	void OnColliderEnter(Collider other)
+	void OnTriggerEnter2D(Collider2D other)
 	{
 		switch (type) {
-		case PowerUpType.HEALTH: 
+		case PowerUpType.HEALTH:
+			other.GetComponent<PlayerHealth> ().RefillHealth ();
+			break;
+		case PowerUpType.MANA:
+			other.GetComponent<AttackController> ().RefilMana ();
+			break;
+		case PowerUpType.STAMINA:
+			other.GetComponent<AttackController> ().RefilStamina ();
 			break;
 		}
+
+		Destroy (gameObject);
 	}
 		
 }
