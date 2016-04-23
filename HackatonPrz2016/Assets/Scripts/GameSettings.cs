@@ -3,6 +3,9 @@ using System.Collections;
 
 public static class GameSettings  {
 
+	public static PlayerPreferences Player1;
+	public static PlayerPreferences Player2;
+
 
 	public struct PlayerPreferences
 	{

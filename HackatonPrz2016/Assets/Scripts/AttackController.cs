@@ -6,6 +6,8 @@ public class AttackController : MonoBehaviour {
 	public Transform spawnPoint;
 	public int startingStamina = 5;
 	public float timeToStaminaRefill = 4;
+	public float startingMana = 100;
+	public float manaPerSecound = 9;
 	[Header("Attacks:")]
 	public LayerMask attackMask;
 	public AttackInfo fastAttack;
@@ -29,6 +31,9 @@ public class AttackController : MonoBehaviour {
 	int stamina;
 	float staminaCounter;
 
+	float mana;
+	float manaCounter;
+
 	Color originalColor;
 	bool attackUsed;
 	bool stopAttack;
@@ -51,6 +56,7 @@ public class AttackController : MonoBehaviour {
 		strSAttack = movement.number == PlayerMovement.PlayerNumber.PLAYER1 ? "g" : ",";
 		strDash = movement.number == PlayerMovement.PlayerNumber.PLAYER1 ? "h" : ".";
 		stamina = startingStamina;
+		mana = startingMana;
 	}
 
 	void Update()
@@ -89,10 +95,12 @@ public class AttackController : MonoBehaviour {
 					StartCoroutine(SpecialAttackCounter(fireball.cooldown));
 					GameObject fb = (GameObject)Instantiate (fireball.gameObject, spawnPoint.position, transform.rotation);
 					fb.GetComponent<FireBall> ().SetVelocity (movement.faceDirection);
+					startingMana -= fireball.manaCost;
 				}
 			}
 		}
 
+		mana += manaPerSecound * Time.deltaTime;
 		staminaCounter += Time.deltaTime;
 		if (staminaCounter >= timeToStaminaRefill) {
 			staminaCounter = 0;
@@ -156,7 +164,8 @@ public class AttackController : MonoBehaviour {
 	{
 		public string name;
 		public GameObject gameObject;
-							public float cooldown;
+		public float cooldown;
+		public float manaCost;
 		[HideInInspector]
 		public bool used;
 	}
