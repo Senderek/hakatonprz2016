@@ -5,6 +5,7 @@ using System.Collections;
 public class PlayerHealth : MonoBehaviour {
     public GameObject HealthBar;
     public float startingHealth = 100;
+	public GameObject deathParticle;
 
 	PlayerMovement mov;
 	float health;
@@ -28,6 +29,11 @@ public class PlayerHealth : MonoBehaviour {
 		}
 	}
 
+	public void RefillHealth()
+	{
+		health = startingHealth;
+	}
+
 	public void TakeDamage(float dmg)
 	{
 		GetComponent<Animator> ().SetTrigger ("PlayerHit");
@@ -35,6 +41,8 @@ public class PlayerHealth : MonoBehaviour {
 		if (health <= 0) {
             HealthBar.GetComponent<UnityEngine.UI.Slider>().value = 0;
             GameObject.FindObjectOfType<CameraController> ().StopUpdating ();
+
+			Instantiate (deathParticle);
 			DestroyImmediate (gameObject);
 		}
 	}

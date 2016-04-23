@@ -4,8 +4,8 @@ using System.Collections;
 public class AttackController : MonoBehaviour {
 
 	public Transform spawnPoint;
-	public int startingStamina = 5;
-	public float timeToStaminaRefill = 4;
+	public int startingStamina = 6;
+	public float timeToStaminaRefill = 2;
 	public float startingMana = 100;
 	public float manaPerSecound = 9;
     [Header("Attacks:")]
@@ -120,6 +120,16 @@ public class AttackController : MonoBehaviour {
 			stamina = startingStamina;
 		}
 	}
+
+	public void RefilMana()
+	{
+		mana = startingMana;
+	}
+	public void RefilStamina()
+	{
+		stamina = startingStamina;
+	}
+
 
 	public void GetFullStamina()
 	{
