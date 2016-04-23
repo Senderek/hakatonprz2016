@@ -431,6 +431,10 @@ Prefab:
     - {fileID: 11468908, guid: d5cbc00b09800224396997c6456acb02, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: d5cbc00b09800224396997c6456acb02, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &350261836 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 125238, guid: d5cbc00b09800224396997c6456acb02, type: 2}
+  m_PrefabInternal: {fileID: 350261835}
 --- !u!1 &374964868
 GameObject:
   m_ObjectHideFlags: 0
@@ -957,6 +961,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbfb8bac91ce5344ea9af49b3710104e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerName1: {fileID: 350261836}
+  PlayerName2: {fileID: 1736189272}
   clampPosition: 3.3
   playersList: []
 --- !u!1 &963988566
@@ -1242,6 +1248,7 @@ GameObject:
   - 224: {fileID: 1063642285}
   - 222: {fileID: 1063642287}
   - 114: {fileID: 1063642286}
+  - 114: {fileID: 1063642288}
   m_Layer: 5
   m_Name: InGameUI
   m_TagString: Untagged
@@ -1300,6 +1307,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1063642284}
+--- !u!114 &1063642288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1063642284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b979bf0811e909641b36aa65ca3f04ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerName1: {fileID: 501421710}
+  PlayerName2: {fileID: 192387741}
 --- !u!1 &1115809980
 GameObject:
   m_ObjectHideFlags: 0
@@ -1961,6 +1981,10 @@ Prefab:
     - {fileID: 11468908, guid: d5cbc00b09800224396997c6456acb02, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: d5cbc00b09800224396997c6456acb02, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1736189272 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 125238, guid: d5cbc00b09800224396997c6456acb02, type: 2}
+  m_PrefabInternal: {fileID: 1736189271}
 --- !u!1 &1755173229
 GameObject:
   m_ObjectHideFlags: 0

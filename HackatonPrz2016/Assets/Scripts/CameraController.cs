@@ -3,26 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class CameraController : MonoBehaviour {
-    [Header("Nameplates:")]
-    public GameObject PlayerName1;
-    public GameObject PlayerName2;
+    
     public float clampPosition;
 	public List<Transform> playersList = new List<Transform>();
 
 	bool stopUpdate;
 
 	void Start () {
-        if (GameSettings.Player1.name == ""|| GameSettings.Player1.name == null)
-            PlayerName1.GetComponent<UnityEngine.UI.Text>().text = "PLAYER1";
-        else
-        PlayerName1.GetComponent<UnityEngine.UI.Text>().text = GameSettings.Player1.name.ToString().ToUpper();
-        if (GameSettings.Player2.name == "")
-            PlayerName2.GetComponent<UnityEngine.UI.Text>().text = "PLAYER2"; else
-        PlayerName2.GetComponent<UnityEngine.UI.Text>().text = GameSettings.Player2.name.ToString().ToUpper();
-        foreach (GameObject g in GameObject.FindGameObjectsWithTag("Player")){
-			playersList.Add (g.transform);
-			//print ("Find");
-		}
+
+        foreach (GameObject g in GameObject.FindGameObjectsWithTag("Player"))
+        {
+            playersList.Add(g.transform);
+        }
+       
+            //print ("Find");
+        
 	
 	}
 
