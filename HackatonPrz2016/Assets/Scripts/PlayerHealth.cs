@@ -46,7 +46,7 @@ public class PlayerHealth : MonoBehaviour {
             HealthBar.GetComponent<UnityEngine.UI.Slider>().value = 0;
             GameObject.FindObjectOfType<CameraController> ().StopUpdating ();
 
-			Instantiate (deathParticle);
+			Instantiate (deathParticle,transform.position, deathParticle.transform.rotation);
 			DestroyImmediate (gameObject);
 		}
 	}
