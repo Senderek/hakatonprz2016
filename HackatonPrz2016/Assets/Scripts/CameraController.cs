@@ -6,6 +6,8 @@ public class CameraController : MonoBehaviour {
 
 	public List<Transform> playersList = new List<Transform>();
 
+	bool stopUpdate;
+
 	void Start () {
 
 		foreach (GameObject g in GameObject.FindGameObjectsWithTag("Player")){
@@ -16,7 +18,13 @@ public class CameraController : MonoBehaviour {
 	}
 
 	void Update () {
-		UpdateCameraPosition ();
+		if(!stopUpdate)
+			UpdateCameraPosition ();
+	}
+
+	public void StopUpdating()
+	{
+		stopUpdate = true;
 	}
 
 	void UpdateCameraPosition()
@@ -25,12 +33,14 @@ public class CameraController : MonoBehaviour {
 		Transform mostRightPlayer = playersList [0];
 
 		foreach (Transform t in playersList) {
-			if (t.position.x > mostRightPlayer.position.x) {
-				mostRightPlayer = t;
-			}
+			if(t.gameObject != null){
+				if (t.position.x > mostRightPlayer.position.x) {
+					mostRightPlayer = t;
+				}
 
-			if (t.position.x < mostLeftPlayer.position.x) {
-				mostLeftPlayer = t;
+				if (t.position.x < mostLeftPlayer.position.x) {
+					mostLeftPlayer = t;
+				}
 			}
 		}
 
