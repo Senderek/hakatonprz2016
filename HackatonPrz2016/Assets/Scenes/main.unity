@@ -346,7 +346,12 @@ Prefab:
       propertyPath: HealthBar
       value: 
       objectReference: {fileID: 1755173229}
-    m_RemovedComponents: []
+    - target: {fileID: 11467554, guid: d5cbc00b09800224396997c6456acb02, type: 2}
+      propertyPath: ManaBar
+      value: 
+      objectReference: {fileID: 45302676}
+    m_RemovedComponents:
+    - {fileID: 11468908, guid: d5cbc00b09800224396997c6456acb02, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: d5cbc00b09800224396997c6456acb02, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &374964868
@@ -1292,23 +1297,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1063642284}
---- !u!1 &1172606976 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 125238, guid: d5cbc00b09800224396997c6456acb02, type: 2}
-  m_PrefabInternal: {fileID: 1736189271}
---- !u!114 &1172606978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1172606976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 718164060230b5448a808159241fcd2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HealthBar: {fileID: 0}
-  startingHealth: 100
 --- !u!1 &1190444988
 GameObject:
   m_ObjectHideFlags: 0
@@ -1728,7 +1716,12 @@ Prefab:
       propertyPath: HealthBar
       value: 
       objectReference: {fileID: 1056458554}
-    m_RemovedComponents: []
+    - target: {fileID: 11467554, guid: d5cbc00b09800224396997c6456acb02, type: 2}
+      propertyPath: ManaBar
+      value: 
+      objectReference: {fileID: 1006384757}
+    m_RemovedComponents:
+    - {fileID: 11468908, guid: d5cbc00b09800224396997c6456acb02, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: d5cbc00b09800224396997c6456acb02, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1755173229
