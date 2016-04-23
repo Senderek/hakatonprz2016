@@ -12,6 +12,8 @@ public class MenuController : Singleton<MenuController>
         PLAYMENU,
         CREDITSMENU,
         EXITMENU,
+        CONTROLSMENU1,
+        CONTROLSMENU2,
 
     };
   //  [SerializeField]
@@ -20,14 +22,21 @@ public class MenuController : Singleton<MenuController>
     [Header("Containers:")]
     public GameObject MainmenuC;
     public GameObject CreditsC;
+    public GameObject OptionsC;
+    public GameObject Controls1C;
+    public GameObject Controls2C;
+    [Header("Buttons from playmode:")]
+    public GameObject RDefault1Button;
+    public GameObject RDefault2Button;
+    public GameObject ReturnFromControls1;
+    public GameObject ReturnFromControls2;
+    public GameObject ReturnButton;
+    public GameObject PlayButton;
 
 
-    [Header("Main menu buttons: ")]
-    public GameObject StartGameButton;
-    public GameObject CreditsButton;
-    public GameObject ExitButton;
 
-     public static MenuController Instance
+
+    public static MenuController Instance
      {
          get
          {
@@ -43,6 +52,7 @@ public class MenuController : Singleton<MenuController>
 
     void Start()
     {
+        //Input.
         OnMenuChangeState();
     }
 
@@ -59,13 +69,41 @@ public class MenuController : Singleton<MenuController>
     }
     public void OnPlayButtonPressed()
     {
-        this.currentState = EMenuState.PLAYMENU;
-        OnMenuChangeState();
+        UnityEngine.SceneManagement.SceneManager.LoadScene("main");
     }
     public void OnReturnToMainMenuButtonPressed()
     {
         this.currentState = EMenuState.MAINMENU;
         OnMenuChangeState();
+    }
+    public void OnPlayModeButtonPressed()
+    {
+        this.currentState = EMenuState.PLAYMENU;
+        OnMenuChangeState();
+    }
+    public void OnControls1ButtonPressed()
+    {
+        this.currentState = EMenuState.CONTROLSMENU1;
+        OnMenuChangeState();
+    }
+    public void OnControls2ButtonPressed()
+    {
+        this.currentState = EMenuState.CONTROLSMENU2;
+        OnMenuChangeState();
+    }
+    public void setinactive()
+    {
+        MainmenuC.SetActive(false);
+        CreditsC.SetActive(false);
+        OptionsC.SetActive(false);
+        Controls1C.SetActive(false);
+        Controls2C.SetActive(false);
+        RDefault1Button.SetActive(false);
+        RDefault2Button.SetActive(false);
+        ReturnButton.SetActive(false);
+        PlayButton.SetActive(false);
+        ReturnFromControls1.SetActive(false);
+        ReturnFromControls2.SetActive(false);
     }
     void OnMenuChangeState()
     {
@@ -78,25 +116,49 @@ public class MenuController : Singleton<MenuController>
                 }
             case EMenuState.MAINMENU:
                 {
+                    setinactive();
                     MainmenuC.SetActive(true);
-                    CreditsC.SetActive(false);
+                    
 
                     break;
                 }
             case EMenuState.CREDITSMENU:
                 {
-                    MainmenuC.SetActive(false);
+                    setinactive();
                     CreditsC.SetActive(true);
                     break;
                 }
+            case EMenuState.PLAYMENU:
+                {
+                    setinactive();
+                    OptionsC.SetActive(true);
+                    ReturnButton.SetActive(true);
+                    PlayButton.SetActive(true);
+                    ReturnFromControls1.SetActive(false);
+                    ReturnFromControls2.SetActive(false);
+                    RDefault1Button.SetActive(false);
+                    RDefault2Button.SetActive(false);
+                    break;
+                }
+            case EMenuState.CONTROLSMENU1:
+                setinactive();
+                OptionsC.SetActive(true);
+                ReturnFromControls1.SetActive(true);
+                RDefault1Button.SetActive(true);
+                Controls1C.SetActive(true);
+
+                break;
+            case EMenuState.CONTROLSMENU2:
+                setinactive();
+                OptionsC.SetActive(true);
+                Controls2C.SetActive(true);
+                ReturnFromControls2.SetActive(true); 
+                RDefault2Button.SetActive(true);
+                break;
             default:
                 Debug.Log("switch,default");
                 break;
         }
     }
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+   
 }
