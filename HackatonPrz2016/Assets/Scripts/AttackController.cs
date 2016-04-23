@@ -91,7 +91,7 @@ public class AttackController : MonoBehaviour {
 
 			if (inputData.fastAttack && inputData.strongAttack) {
 				inputData.Reset ();
-				if (!attackUsed) {						
+				if (!attackUsed && mana >= fireball.manaCost) {						
 					StartCoroutine(SpecialAttackCounter(fireball.cooldown));
 					GameObject fb = (GameObject)Instantiate (fireball.gameObject, spawnPoint.position, transform.rotation);
 					fb.GetComponent<FireBall> ().SetVelocity (movement.faceDirection);
@@ -108,7 +108,6 @@ public class AttackController : MonoBehaviour {
 				stamina++;
 		}
 		if (stamina <= 0) {
-			print ("exhausted");
 			movement.exhausted = true;
 			stamina = startingStamina;
 		}
@@ -125,7 +124,7 @@ public class AttackController : MonoBehaviour {
 
 	IEnumerator StartAttack(AttackInfo info)
 	{
-		animator.SetTrigger ("PlayerAttack");
+		animator.SetBool ("PlayerAttack", true);
 		print (stamina);
 		stamina--;
 		dooingAttack = true;
@@ -134,6 +133,8 @@ public class AttackController : MonoBehaviour {
 		DoAttack (info);
 		dooingAttack = false;
 		renderer.color = originalColor;
+		animator.SetBool ("PlayerAttack", false);
+
 
 	}
 

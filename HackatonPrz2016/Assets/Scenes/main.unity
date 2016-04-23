@@ -164,7 +164,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 413226, guid: d5cbc00b09800224396997c6456acb02, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 413226, guid: d5cbc00b09800224396997c6456acb02, type: 2}
       propertyPath: m_LocalRotation.x
@@ -396,6 +396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbfb8bac91ce5344ea9af49b3710104e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clampPosition: 3.3
   playersList: []
 --- !u!1 &1172606976 stripped
 GameObject:

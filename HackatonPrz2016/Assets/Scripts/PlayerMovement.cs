@@ -29,6 +29,9 @@ public class PlayerMovement : MonoBehaviour {
 	AttackController attackController;
 	bool dashing = false;
 
+	TrailRenderer trail;
+	Animator anim;
+
 	void Awake()
 	{
 		faceDirection = Vector2.right;
@@ -36,6 +39,8 @@ public class PlayerMovement : MonoBehaviour {
 		rigidbody = GetComponent<Rigidbody2D> ();
 		attackController = GetComponent<AttackController> ();
 		originalColor = renderer.color;
+		trail = GetComponent<TrailRenderer> ();
+		anim = GetComponent<Animator> ();
 	}
 
 	void Update()
@@ -64,10 +69,14 @@ public class PlayerMovement : MonoBehaviour {
 		}
 
 		if (exhausted) {
+			anim.SetBool ("PlayerExhausted", true);
+			renderer.color = Color.gray;
 			exhaustCounter += Time.deltaTime;
 			if (exhaustCounter >= exhaustTime) {
 				exhaustCounter = 0;
 				exhausted = false;
+				anim.SetBool ("PlayerExhausted", false);
+				renderer.color = originalColor;
 			}
 		}
 	}
@@ -79,10 +88,12 @@ public class PlayerMovement : MonoBehaviour {
 
 	IEnumerator DashCor()
 	{
+		trail.enabled = true;
 		velocity = velocity.normalized * dashSpeed;
 		dashing = true;
 		yield return new WaitForSeconds (dashTime);
 		dashing = false;
+		trail.enabled = false;
 	}
 
 

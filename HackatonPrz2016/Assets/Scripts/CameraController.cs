@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class CameraController : MonoBehaviour {
 
+	public float clampPosition;
 	public List<Transform> playersList = new List<Transform>();
 
 	bool stopUpdate;
@@ -20,6 +21,9 @@ public class CameraController : MonoBehaviour {
 	void Update () {
 		if(!stopUpdate)
 			UpdateCameraPosition ();
+
+		Vector3 newPos = new Vector3 (Mathf.Clamp (transform.position.x, -clampPosition, clampPosition), transform.position.y, transform.position.z);
+		transform.position = newPos;
 	}
 
 	public void StopUpdating()

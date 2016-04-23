@@ -23,6 +23,7 @@ public class PlayerHealth : MonoBehaviour {
 
 	public void TakeDamage(float dmg)
 	{
+		GetComponent<Animator> ().SetTrigger ("PlayerHit");
 		health -= mov.exhausted ? dmg * 2 : dmg;
 		if (health <= 0) {
 			GameObject.FindObjectOfType<CameraController> ().StopUpdating ();
