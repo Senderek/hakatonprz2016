@@ -125,7 +125,7 @@ public class KeybindsController : Singleton<KeybindsController>
 
             case EControlsState.MOVEUP:
                 moveuptext.GetComponent<UnityEngine.UI.Text>().text = keycode.ToString();
-               // gameSettings.keymoveup(keycode);
+                
                 button = false;
                 break;
             case EControlsState.MOVEDOWN:

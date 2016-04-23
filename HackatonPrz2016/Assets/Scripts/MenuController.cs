@@ -32,6 +32,27 @@ public class MenuController : Singleton<MenuController>
     public GameObject ReturnFromControls2;
     public GameObject ReturnButton;
     public GameObject PlayButton;
+    [Header("Keybinds:")]
+    public GameObject moveuptext;
+    public GameObject movedowntext;
+    public GameObject movelefttext;
+    public GameObject moverighttext;
+    public GameObject fastattacktext;
+    public GameObject slowattacktext;
+    public GameObject dashtext;
+
+    public GameObject moveuptext2;
+    public GameObject movedowntext2;
+    public GameObject movelefttext2;
+    public GameObject moverighttext2;
+    public GameObject fastattacktext2;
+    public GameObject slowattacktext2;
+    public GameObject dashtext2;
+    [Header("Player names:")]
+    public GameObject name1;
+    public GameObject name2;
+   // [Header("Player colors:")]
+
 
 
 
@@ -69,6 +90,10 @@ public class MenuController : Singleton<MenuController>
     }
     public void OnPlayButtonPressed()
     {
+        
+
+
+
         UnityEngine.SceneManagement.SceneManager.LoadScene("main");
     }
     public void OnReturnToMainMenuButtonPressed()
