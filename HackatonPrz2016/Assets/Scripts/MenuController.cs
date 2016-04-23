@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 
 public class MenuController : Singleton<MenuController>
@@ -51,9 +52,10 @@ public class MenuController : Singleton<MenuController>
     [Header("Player names:")]
     public GameObject name1;
     public GameObject name2;
-   // [Header("Player colors:")]
-
-
+    // [Header("Player colors:")]
+    
+    Color color1;
+    Color color2;
 
 
 
@@ -90,8 +92,27 @@ public class MenuController : Singleton<MenuController>
     }
     public void OnPlayButtonPressed()
     {
-        
 
+
+        GameSettings.Player1.keyBindings.up = moveuptext.ToString();
+        GameSettings.Player1.keyBindings.down = movedowntext.ToString();
+        GameSettings.Player1.keyBindings.right = moverighttext.ToString();
+        GameSettings.Player1.keyBindings.left=movelefttext.ToString();
+        GameSettings.Player1.keyBindings.fastAttack=fastattacktext.ToString();
+        GameSettings.Player1.keyBindings.strongAttack = slowattacktext.ToString();
+        GameSettings.Player1.keyBindings.dash = dashtext.ToString();
+        GameSettings.Player1.name = name1.ToString();
+        GameSettings.Player1.color = color1;
+
+        GameSettings.Player2.keyBindings.up = moveuptext2.ToString();
+        GameSettings.Player2.keyBindings.down = movedowntext2.ToString();
+        GameSettings.Player2.keyBindings.right = moverighttext2.ToString();
+        GameSettings.Player2.keyBindings.left = movelefttext2.ToString();
+        GameSettings.Player2.keyBindings.fastAttack = fastattacktext2.ToString();
+        GameSettings.Player2.keyBindings.strongAttack = slowattacktext2.ToString();
+        GameSettings.Player2.keyBindings.dash = dashtext2.ToString();
+        GameSettings.Player2.name = name2.ToString();
+        GameSettings.Player2.color = color2;
 
 
         UnityEngine.SceneManagement.SceneManager.LoadScene("main");
@@ -136,6 +157,28 @@ public class MenuController : Singleton<MenuController>
         PlayButton.SetActive(false);
         ReturnFromControls1.SetActive(false);
         ReturnFromControls2.SetActive(false);
+    }
+    public void RestoreDefaults1()
+    {
+        moveuptext.GetComponent<UnityEngine.UI.Text>().text = "UpArrow";
+        movedowntext.GetComponent<UnityEngine.UI.Text>().text = "DownArrow";
+        movelefttext.GetComponent<UnityEngine.UI.Text>().text = "LeftArrow";
+        moverighttext.GetComponent<UnityEngine.UI.Text>().text = "RightArrow";
+        fastattacktext.GetComponent<UnityEngine.UI.Text>().text = "m";
+        slowattacktext.GetComponent<UnityEngine.UI.Text>().text = ",";
+        dashtext.GetComponent<UnityEngine.UI.Text>().text = ".";
+
+    }
+    public void RestoreDefaults2()
+    {
+        moveuptext2.GetComponent<UnityEngine.UI.Text>().text = "w";
+        movedowntext2.GetComponent<UnityEngine.UI.Text>().text = "s";
+        movelefttext2.GetComponent<UnityEngine.UI.Text>().text = "a";
+        moverighttext2.GetComponent<UnityEngine.UI.Text>().text = "d";
+        fastattacktext2.GetComponent<UnityEngine.UI.Text>().text = "f";
+        slowattacktext2.GetComponent<UnityEngine.UI.Text>().text = "g";
+        dashtext2.GetComponent<UnityEngine.UI.Text>().text = "h";
+
     }
     void OnMenuChangeState()
     {
@@ -190,7 +233,14 @@ public class MenuController : Singleton<MenuController>
             default:
                 Debug.Log("switch,default");
                 break;
+            
         }
     }
-   
+   void Awake()
+    {
+        this.currentState = EMenuState.MAINMENU;
+        OnMenuChangeState();
+        RestoreDefaults1();
+        RestoreDefaults2();
+    }
 }

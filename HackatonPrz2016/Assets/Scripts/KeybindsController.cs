@@ -56,14 +56,14 @@ public class KeybindsController : Singleton<KeybindsController>
     {
         if (Input.GetKeyDown(KeyCode.M))
         {
-            Debug.Log("KeyCode M: ");
+            //Debug.Log("KeyCode M: ");
         }
             foreach (KeyCode kcode in Enum.GetValues(typeof(KeyCode)))
         {            
             if (Input.GetKeyDown(kcode))
             {
                 keycode = kcode.ToString();
-                Debug.Log("KeyCode down: " + kcode);
+                //Debug.Log("KeyCode down: " + kcode);
             }
         }
     }
@@ -164,7 +164,7 @@ public class KeybindsController : Singleton<KeybindsController>
         if (button==true&&!Input.GetMouseButton(0)&& Input.anyKeyDown)
         {
               
-            Debug.Log("mouse");
+           // Debug.Log("mouse");
             detectPressedKeyOrButton();
             
             //if (!Input.GetMouseButton(0))
