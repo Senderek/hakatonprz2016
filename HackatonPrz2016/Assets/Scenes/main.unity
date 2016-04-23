@@ -354,6 +354,10 @@ Prefab:
       propertyPath: fireball.manaCost
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 11408464, guid: d5cbc00b09800224396997c6456acb02, type: 2}
+      propertyPath: PlayerName
+      value: 
+      objectReference: {fileID: 501421710}
     m_RemovedComponents:
     - {fileID: 11468908, guid: d5cbc00b09800224396997c6456acb02, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: d5cbc00b09800224396997c6456acb02, type: 2}
@@ -489,8 +493,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 10, y: 0}
+  m_AnchoredPosition: {x: 5, y: 0}
+  m_SizeDelta: {x: 22, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &465299219
 MonoBehaviour:
@@ -958,6 +962,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbfb8bac91ce5344ea9af49b3710104e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerName1: {fileID: 501421710}
+  PlayerName2: {fileID: 192387741}
   clampPosition: 3.3
   playersList: []
 --- !u!1 &963988566
@@ -1332,8 +1338,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 10, y: 0}
+  m_AnchoredPosition: {x: 5, y: 0}
+  m_SizeDelta: {x: 21, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1190444990
 MonoBehaviour:
@@ -1724,6 +1730,10 @@ Prefab:
       propertyPath: ManaBar
       value: 
       objectReference: {fileID: 1006384757}
+    - target: {fileID: 11408464, guid: d5cbc00b09800224396997c6456acb02, type: 2}
+      propertyPath: PlayerName
+      value: 
+      objectReference: {fileID: 192387741}
     m_RemovedComponents:
     - {fileID: 11468908, guid: d5cbc00b09800224396997c6456acb02, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: d5cbc00b09800224396997c6456acb02, type: 2}
@@ -1842,8 +1852,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 10, y: 0}
+  m_AnchoredPosition: {x: 5, y: 0}
+  m_SizeDelta: {x: 21, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1787163383
 MonoBehaviour:
@@ -2118,8 +2128,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 10, y: 0}
+  m_AnchoredPosition: {x: 5, y: 0}
+  m_SizeDelta: {x: 21, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2116778407
 MonoBehaviour:

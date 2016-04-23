@@ -4,6 +4,8 @@ using System.Collections;
 
 public class PlayerHealth : MonoBehaviour {
     public GameObject HealthBar;
+    
+    
     public float startingHealth = 100;
 
 	PlayerMovement mov;
@@ -13,6 +15,8 @@ public class PlayerHealth : MonoBehaviour {
 	{
 		mov = GetComponent<PlayerMovement> ();
 		health = startingHealth;
+        
+
 	}
 
 	void Update()
