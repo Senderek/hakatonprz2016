@@ -33,10 +33,10 @@ public class PowerUpsSpawner : MonoBehaviour {
 				Instantiate (health, pos, Quaternion.identity);
 				break;
 			case 1:
-				Instantiate (health, pos, Quaternion.identity);
+				Instantiate (stamina, pos, Quaternion.identity);
 				break;
 			case 2:
-				Instantiate (health, pos, Quaternion.identity);
+				Instantiate (mana, pos, Quaternion.identity);
 				break;
 			}
 		}
