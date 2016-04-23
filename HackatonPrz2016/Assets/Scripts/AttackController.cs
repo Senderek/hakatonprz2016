@@ -52,9 +52,9 @@ public class AttackController : MonoBehaviour {
 
 	void Start()
 	{
-		strFAttack = movement.number == PlayerMovement.PlayerNumber.PLAYER1 ? "f" : "m";
-		strSAttack = movement.number == PlayerMovement.PlayerNumber.PLAYER1 ? "g" : ",";
-		strDash = movement.number == PlayerMovement.PlayerNumber.PLAYER1 ? "h" : ".";
+		strFAttack = movement.number == PlayerMovement.PlayerNumber.PLAYER1 ? GameSettings.Player1.keyBindings.fastAttack : GameSettings.Player2.keyBindings.fastAttack;
+		strSAttack = movement.number == PlayerMovement.PlayerNumber.PLAYER1 ? GameSettings.Player1.keyBindings.strongAttack : GameSettings.Player2.keyBindings.strongAttack;
+		strDash = movement.number == PlayerMovement.PlayerNumber.PLAYER1 ? GameSettings.Player1.keyBindings.dash  : GameSettings.Player2.keyBindings.dash;
 		stamina = startingStamina;
 		mana = startingMana;
 	}
@@ -62,6 +62,7 @@ public class AttackController : MonoBehaviour {
 	void Update()
 	{
 		if (!dooingAttack && !movement.exhausted) {
+			print (strFAttack);
 			
 			if (Input.GetKeyDown (strFAttack)) {
 				inputData.fastAttack = true;
