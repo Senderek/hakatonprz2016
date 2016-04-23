@@ -50,11 +50,31 @@ public class PlayerMovement : MonoBehaviour {
 		}
 		else if(!dashing && !exhausted)
 		{
-			string strVert = number == PlayerNumber.PLAYER1 ? "VerticalP1" : "VerticalP2";
-			string strHor = number == PlayerNumber.PLAYER1 ? "HorizontalP1" : "HorizontalP2";
+			//string strVert = number == PlayerNumber.PLAYER1 ? "VerticalP1" : "VerticalP2";
+			//string strHor = number == PlayerNumber.PLAYER1 ? "HorizontalP1" : "HorizontalP2";
 
-			float vertical = Input.GetAxisRaw (strVert);
-			float horizontal = Input.GetAxisRaw (strHor);
+			string strUp = number == PlayerNumber.PLAYER1 ? GameSettings.Player1.keyBindings.up.ToLower() : GameSettings.Player2.keyBindings.up.ToLower();
+			string strDown = number == PlayerNumber.PLAYER1 ? GameSettings.Player1.keyBindings.down.ToLower() : GameSettings.Player2.keyBindings.down.ToLower();
+			string strLeft = number == PlayerNumber.PLAYER1 ? GameSettings.Player1.keyBindings.left.ToLower() : GameSettings.Player2.keyBindings.left.ToLower();
+			string strRight = number == PlayerNumber.PLAYER1 ? GameSettings.Player1.keyBindings.right.ToLower() : GameSettings.Player2.keyBindings.right.ToLower();
+
+
+			float vertical;// = Input.GetAxisRaw (strVert);
+			float horizontal;// = Input.GetAxisRaw (strHor);
+
+			if (Input.GetKey (strLeft))
+				horizontal = -1;
+			else if (Input.GetKey (strRight))
+				horizontal = 1;
+			else
+				horizontal = 0;
+
+			if (Input.GetKey (strUp))
+				vertical = 1;
+			else if (Input.GetKey (strDown))
+				vertical = -1;
+			else
+				vertical = 0;
 
 			if (horizontal != 0)
 				faceDirection = new Vector2 (horizontal, 0);
@@ -69,6 +89,7 @@ public class PlayerMovement : MonoBehaviour {
 		}
 
 		if (exhausted) {
+			velocity = Vector2.zero;
 			anim.SetBool ("PlayerExhausted", true);
 			renderer.color = Color.gray;
 			exhaustCounter += Time.deltaTime;

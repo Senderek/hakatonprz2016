@@ -52,9 +52,9 @@ public class AttackController : MonoBehaviour {
 
 	void Start()
 	{
-		strFAttack = movement.number == PlayerMovement.PlayerNumber.PLAYER1 ? GameSettings.Player1.keyBindings.fastAttack : GameSettings.Player2.keyBindings.fastAttack;
-		strSAttack = movement.number == PlayerMovement.PlayerNumber.PLAYER1 ? GameSettings.Player1.keyBindings.strongAttack : GameSettings.Player2.keyBindings.strongAttack;
-		strDash = movement.number == PlayerMovement.PlayerNumber.PLAYER1 ? GameSettings.Player1.keyBindings.dash  : GameSettings.Player2.keyBindings.dash;
+		strFAttack = movement.number == PlayerMovement.PlayerNumber.PLAYER1 ? GameSettings.Player1.keyBindings.fastAttack.ToLower() : GameSettings.Player2.keyBindings.fastAttack.ToLower();
+		strSAttack = movement.number == PlayerMovement.PlayerNumber.PLAYER1 ? GameSettings.Player1.keyBindings.strongAttack.ToLower() : GameSettings.Player2.keyBindings.strongAttack.ToLower();
+		strDash = movement.number == PlayerMovement.PlayerNumber.PLAYER1 ? GameSettings.Player1.keyBindings.dash.ToLower()  : GameSettings.Player2.keyBindings.dash.ToLower();
 		stamina = startingStamina;
 		mana = startingMana;
 	}
@@ -84,6 +84,7 @@ public class AttackController : MonoBehaviour {
 			}
 			if (Input.GetKeyDown (strDash)) {
 				//inputData.dashing = false;
+				stamina--;
 				movement.Dash ();
 			}
 
@@ -112,6 +113,15 @@ public class AttackController : MonoBehaviour {
 			movement.exhausted = true;
 			stamina = startingStamina;
 		}
+	}
+
+	public void GetFullStamina()
+	{
+		stamina = startingStamina;
+	}
+	public void GetFullMana()
+	{
+		mana = startingMana;
 	}
 
 	IEnumerator SpecialAttackCounter(float time)
