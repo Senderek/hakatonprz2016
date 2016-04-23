@@ -4,15 +4,14 @@ using System.Collections;
 public class PlayerHealth : MonoBehaviour {
 
 	public float startingHealth = 100;
-	public int startingStamina = 4;
 
+	PlayerMovement mov;
 	float health;
-	float stamina;
 
 	void Start()
 	{
+		mov = GetComponent<PlayerMovement> ();
 		health = startingHealth;
-		stamina = startingStamina;
 	}
 
 	void Update()
@@ -24,7 +23,7 @@ public class PlayerHealth : MonoBehaviour {
 
 	public void TakeDamage(float dmg)
 	{
-		health -= dmg;
+		health -= mov.exhausted ? dmg * 2 : dmg;
 		if (health <= 0) {
 			GameObject.FindObjectOfType<CameraController> ().StopUpdating ();
 			DestroyImmediate (gameObject);
