@@ -152,7 +152,7 @@ public class AttackController : MonoBehaviour {
 	IEnumerator StartAttack(AttackInfo info)
 	{
 		animator.SetBool ("PlayerAttack", true);
-		print (stamina);
+		//print (stamina);
 		stamina--;
 		dooingAttack = true;
 		renderer.color = info.color;

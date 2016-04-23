@@ -3,18 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class CameraController : MonoBehaviour {
-
-	public float clampPosition;
+    
+    public float clampPosition;
 	public List<Transform> playersList = new List<Transform>();
 
 	bool stopUpdate;
 
 	void Start () {
 
-		foreach (GameObject g in GameObject.FindGameObjectsWithTag("Player")){
-			playersList.Add (g.transform);
-			//print ("Find");
-		}
+        foreach (GameObject g in GameObject.FindGameObjectsWithTag("Player"))
+        {
+            playersList.Add(g.transform);
+        }
+       
+            //print ("Find");
+        
 	
 	}
 

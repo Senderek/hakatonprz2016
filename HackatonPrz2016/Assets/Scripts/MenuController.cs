@@ -158,7 +158,7 @@ public class MenuController : Singleton<MenuController>
         ReturnFromControls1.SetActive(false);
         ReturnFromControls2.SetActive(false);
     }
-    public void RestoreDefaults1()
+    public void RestoreDefaults2()
     {
         moveuptext.GetComponent<UnityEngine.UI.Text>().text = "UpArrow";
         movedowntext.GetComponent<UnityEngine.UI.Text>().text = "DownArrow";
@@ -169,7 +169,7 @@ public class MenuController : Singleton<MenuController>
         dashtext.GetComponent<UnityEngine.UI.Text>().text = ".";
 
     }
-    public void RestoreDefaults2()
+    public void RestoreDefaults1()
     {
         moveuptext2.GetComponent<UnityEngine.UI.Text>().text = "w";
         movedowntext2.GetComponent<UnityEngine.UI.Text>().text = "s";
@@ -219,7 +219,7 @@ public class MenuController : Singleton<MenuController>
                 setinactive();
                 OptionsC.SetActive(true);
                 ReturnFromControls1.SetActive(true);
-                RDefault1Button.SetActive(true);
+                RDefault2Button.SetActive(true);
                 Controls1C.SetActive(true);
 
                 break;
@@ -228,7 +228,7 @@ public class MenuController : Singleton<MenuController>
                 OptionsC.SetActive(true);
                 Controls2C.SetActive(true);
                 ReturnFromControls2.SetActive(true); 
-                RDefault2Button.SetActive(true);
+                RDefault1Button.SetActive(true);
                 break;
             default:
                 Debug.Log("switch,default");
